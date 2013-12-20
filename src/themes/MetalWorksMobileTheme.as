@@ -1130,7 +1130,7 @@ package themes
 			backgroundFocusedSkin.width = 264 * this.scale;
 			backgroundFocusedSkin.height = 60 * this.scale;
 			input.backgroundFocusedSkin = backgroundFocusedSkin;
-
+			
 			input.minWidth = input.minHeight = 60 * this.scale;
 			input.minTouchWidth = input.minTouchHeight = 88 * this.scale;
 			input.paddingTop = 12 * this.scale;

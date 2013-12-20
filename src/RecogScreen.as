@@ -55,15 +55,17 @@ package
 			button.label = "按下说话";
 			this.addChild( button );
 			button.validate();
-			button.addEventListener(TouchEvent.TOUCH, onTriggered);
+			button.addEventListener(TouchEvent.TOUCH, onTouch);
 			
 			button.pivotX = button.width >> 1;
 			button.x = stage.stageWidth >> 1;
 			button.y = stage.stageHeight - 150;
 		}
 		
-		private const params:String = "ssm=1,sub=iat,aue=speex-wb;7,auf=audio/L16;rate=8000,ent=sms8k, rst=plain";
-		private function onTriggered(e:TouchEvent):void
+		private const params:String = "ssm=1,sub=iat,aue=speex-wb;7,auf=audio/L16;rate=8000,ent=sms8k, rst=plain";			//中文引擎
+//		private const params:String = "ssm=1,sub=iat,aue=speex-wb;7,auf=audio/L16;rate=16000,ent=sms-en16k, rst=plain";		//英文引擎
+//		private const params:String = "ssm=1,sub=iat,aue=speex;1,auf=audio/L16;rate=16000,ent=sms-en16k, rst=plain";		//英文引擎
+		private function onTouch(e:TouchEvent):void
 		{
 			var touch:Touch = e.getTouch(button);
 			if(touch)
@@ -87,7 +89,7 @@ package
 		
 		private function initRecog():void
 		{
-			recog = new Recognizer(AudioDemo.CONFIGS, "dev.voicecloud.cn:80", -1 );
+			recog = new Recognizer(AudioDemo.CONFIGS);
 			//麦克风状态事件
 			recog.addEventListener(MSCMicStatusEvent.STATUS, eventListenerHandler);
 			//音频到达事件
@@ -136,5 +138,24 @@ package
 		}
 		
 		private var recog:Recognizer;
+		
+		override public function dispose():void
+		{
+			if(recog)
+			{
+				recog.recogStop();
+				recog.dispose();
+			}
+			if(button)
+			{
+				button.removeEventListener(TouchEvent.TOUCH, onTouch);
+				button.removeFromParent(true);
+			}
+			if(tf)
+			{
+				tf.dispose();
+			}
+			super.dispose();
+		}
 	}
 }

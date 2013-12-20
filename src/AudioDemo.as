@@ -10,7 +10,8 @@ package
 	[SWF(width="1024", height="768", frameRate="30", backgroundColor="0x663333")]
 	public class AudioDemo extends Sprite
 	{
-		public static const CONFIGS:String = "appid=52b2ae69, timeout=2000";
+//		public static const CONFIGS:String = "appid=52b2ae69, timeout=2000";
+		public static const CONFIGS:String = "appid=52b2ae69";
 		
 		public function AudioDemo()
 		{
