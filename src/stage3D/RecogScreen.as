@@ -1,4 +1,4 @@
-package
+package stage3D
 {
 	import com.iflytek.define.RATE;
 	import com.iflytek.events.MSCErrorEvent;
@@ -31,9 +31,9 @@ package
 		
 		override protected function initialize():void
 		{
-			initController();
-			initLabel();
-			initRecog();
+//			initController();
+//			initLabel();
+//			initRecog();
 		}
 		
 		private var padding:uint = 60;
@@ -62,9 +62,9 @@ package
 			button.y = stage.stageHeight - 150;
 		}
 		
-		private const params:String = "ssm=1,sub=iat,aue=speex-wb;7,auf=audio/L16;rate=8000,ent=sms8k, rst=plain";			//中文引擎
-//		private const params:String = "ssm=1,sub=iat,aue=speex-wb;7,auf=audio/L16;rate=16000,ent=sms-en16k, rst=plain";		//英文引擎
+//		private const params:String = "ssm=1,sub=iat,aue=speex-wb;7,auf=audio/L16;rate=8000,ent=sms8k, rst=plain";			//中文引擎
 //		private const params:String = "ssm=1,sub=iat,aue=speex;1,auf=audio/L16;rate=16000,ent=sms-en16k, rst=plain";		//英文引擎
+		private const params:String = "ssm=1,sub=iat,aue=speex-wb;7,auf=audio/L16;rate=16000,ent=sms-en16k, rst=plain";		//英文引擎
 		private function onTouch(e:TouchEvent):void
 		{
 			var touch:Touch = e.getTouch(button);
@@ -76,7 +76,7 @@ package
 					if(!isCompleted)
 						return;
 					tf.text = "";
-					recog.recogStart(RATE.rate8k, null, params);
+					recog.recogStart(RATE.rate16k, null, params);
 				}
 				else if(touch.phase == TouchPhase.ENDED)
 				{

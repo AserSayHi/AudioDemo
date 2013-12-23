@@ -1,4 +1,4 @@
-package
+package stage3D
 {
 	import com.iflytek.events.MSCErrorEvent;
 	import com.iflytek.events.MSCEvent;
@@ -129,7 +129,8 @@ package
 			}
 		}
 		private var synth:Synthesizer;
-		private var params:String = "ssm=1,vol=default,ttp=text,bgs=0,auf=audio/L16;rate=8000,ent=intp65,vcn=xiaoyan,spd=0";
+//		private var params:String = "ssm=1,vol=default,ttp=text,bgs=0,auf=audio/L16;rate=8000,ent=intp65,vcn=xiaoyan,spd=0";
+		private var params:String="ssm=1,vol=default,ttp=text,bgs=0,auf=audio/L16;rate=11025,ent=intp65,vcn=xiaoyan,spd=0";
 		private function initSynth():void
 		{
 			synth = new Synthesizer(AudioDemo.CONFIGS);

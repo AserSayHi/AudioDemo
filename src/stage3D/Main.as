@@ -1,4 +1,4 @@
-package
+package stage3D
 {
 	import feathers.controls.ScreenNavigator;
 	import feathers.controls.ScreenNavigatorItem;
@@ -11,22 +11,22 @@ package
 	import starling.display.Sprite;
 	import starling.events.Event;
 	
-	import themes.MetalWorksMobileTheme;
+	import stage3D.themes.MetalWorksMobileTheme;
 	
 	public class Main extends Sprite
 	{
 		public function Main()
 		{
-			new MetalWorksMobileTheme();
+//			new MetalWorksMobileTheme();
 			
-			this.addEventListener(Event.ADDED_TO_STAGE, initialize);
+//			this.addEventListener(Event.ADDED_TO_STAGE, initialize);
 		}
 		
 		private function initialize():void
 		{
-			initDPI();
-			initTab();
-			initNav();
+//			initDPI();
+//			initTab();
+//			initNav();
 		}
 		
 		protected static const ORIGINAL_DPI_IPHONE_RETINA:int = 326;
@@ -47,6 +47,7 @@ package
 				}
 			
 			scale = scaledDPI / this._originalDPI;
+			scale = .7;
 		}
 		
 		private const RECOG_SCREEN:String = "语音识别";
@@ -68,6 +69,7 @@ package
 				height: h
 			}  ));
 			this.addChild(nav);
+			nav.showScreen( RECOG_SCREEN );
 			nav.y = tab.height;
 			nav.width = h
 			nav.height = w;
@@ -83,10 +85,9 @@ package
 			]);
 			
 			tab.width = stage.stageWidth;
-			tab.height = 56;
 			tab.layoutData = new AnchorLayoutData(NaN, 0, 0, 0);
-			tab.selectedIndex = 0;
 			this.addChild( tab );
+			tab.validate();
 			tab.addEventListener(Event.CHANGE, onChanged);
 		}
 		
