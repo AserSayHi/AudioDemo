@@ -17,16 +17,16 @@ package stage3D
 	{
 		public function Main()
 		{
-//			new MetalWorksMobileTheme();
+			new MetalWorksMobileTheme();
 			
-//			this.addEventListener(Event.ADDED_TO_STAGE, initialize);
+			this.addEventListener(Event.ADDED_TO_STAGE, initialize);
 		}
 		
 		private function initialize():void
 		{
-//			initDPI();
-//			initTab();
-//			initNav();
+			initDPI();
+			initTab();
+			initNav();
 		}
 		
 		protected static const ORIGINAL_DPI_IPHONE_RETINA:int = 326;

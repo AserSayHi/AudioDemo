@@ -24,8 +24,8 @@ package
 			stage.align = StageAlign.TOP_LEFT;
 			stage.scaleMode = StageScaleMode.NO_SCALE;
 			
-//			var star:Starling = new Starling(Main, stage);
-//			star.start();
+			var star:Starling = new Starling(Main, stage);
+			star.start();
 		}
 	}
 }

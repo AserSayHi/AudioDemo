@@ -31,9 +31,9 @@ package stage3D
 		
 		override protected function initialize():void
 		{
-//			initController();
-//			initLabel();
-//			initRecog();
+			initController();
+			initLabel();
+			initRecog();
 		}
 		
 		private var padding:uint = 60;
@@ -63,7 +63,6 @@ package stage3D
 		}
 		
 //		private const params:String = "ssm=1,sub=iat,aue=speex-wb;7,auf=audio/L16;rate=8000,ent=sms8k, rst=plain";			//中文引擎
-//		private const params:String = "ssm=1,sub=iat,aue=speex;1,auf=audio/L16;rate=16000,ent=sms-en16k, rst=plain";		//英文引擎
 		private const params:String = "ssm=1,sub=iat,aue=speex-wb;7,auf=audio/L16;rate=16000,ent=sms-en16k, rst=plain";		//英文引擎
 		private function onTouch(e:TouchEvent):void
 		{
